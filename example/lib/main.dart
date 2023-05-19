@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
 class Foundation {}
 
 class MyHomePage extends TraceableStatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key, name: title);
+  MyHomePage({Key? key, required this.title}) : super(key: key, name: title);
 
   final String title;
 
@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(widget.title ?? ''),
       ),
       body: Center(
         child: Column(
