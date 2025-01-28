@@ -6,7 +6,7 @@ import 'dart:ui';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:fk_user_agent/fk_user_agent.dart';
+
 import 'package:http/http.dart' as http;
 import 'package:logging/logging.dart';
 import 'package:matomo/random_alpha_numeric.dart';
@@ -121,12 +121,10 @@ class MatomoTracker {
     if (kIsWeb) {
       userAgent = html.window.navigator.userAgent;
     } else {
-      try {
-        await FkUserAgent.init();
-        userAgent = FkUserAgent.webViewUserAgent;
-      } catch (_) {
+    
+        
         userAgent = 'Unknown';
-      }
+      
     }
 
     // Screen Resolution
